@@ -16,7 +16,7 @@ def lambda_handler(event, context):
     user_image = Image.open(BytesIO(base64.b64decode(image_content)))
 
     # Download the flag image
-    flag_key = f'{flag}.png'
+    flag_key = f'flags/{flag}.png'
     flag_image = download_from_s3('country-background-flag-origin', flag_key)
     
     # Process the images
@@ -38,12 +38,26 @@ def download_from_s3(bucket, key):
     return Image.open(BytesIO(file_byte_string))
 
 def combine_images(user_image, flag_image):
-    # Logic to combine images (Center the user image on the flag background)
+    # Ensure both images are in RGBA mode to handle transparency correctly
+    user_image = user_image.convert('RGBA')
+    flag_image = flag_image.convert('RGBA')
+
+    # Create a blank RGBA image with the size of the flag
+    result_image = Image.new('RGBA', flag_image.size)
+
+    # Paste the flag image onto the blank image
+    result_image.paste(flag_image, (0, 0))
+
+    # Calculate the position to center the user image
     width, height = flag_image.size
     user_width, user_height = user_image.size
     position = ((width - user_width) // 2, (height - user_height) // 2)
-    flag_image.paste(user_image, position)
-    return flag_image
+
+    # Paste the user image onto the flag background
+    result_image.paste(user_image, position, user_image)
+
+    # Return the combined image
+    return result_image
 
 def upload_to_s3(bucket, key, image):
     buffer = BytesIO()
