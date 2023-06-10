@@ -1,0 +1,73 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    padding-top: 20px;
+    background-image: url("background.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: #2e2e2fa9;
+    padding: 40px;  /* increased padding */
+    border-radius: 5px;
+    margin: auto;
+    width: 60%;  /* increased width */
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    margin-bottom: 30px;  /* added margin-bottom to h1 */
+}
+
+.progress {
+    height: 30px;
+    margin: 30px 0;  /* added vertical margin to .progress */
+    background-color: #2d2020;
+}
+
+.progress-bar {
+    background-color: #fff;
+}
+
+#download-btn {
+    width: 100%;
+    border: 1px solid #fff;
+    color: #000;
+    background-color: #fff;
+    margin-top: 30px;  /* added margin-top to #download-btn */
+}
+
+.btn-primary {
+    background-color: #ffffff;
+    color: #000;
+    border-color: #fff;
+    margin-top: 30px;  /* added margin-top to .btn-primary */
+}
+
+.form-control {
+    background-color: #1f1c1c;
+    border-color: #ffffff;
+    color: #fff;
+    margin-bottom: 20px;  /* added margin-bottom to .form-control */
+}
+
+.form-control::placeholder {
+    color: #777;
+}
+
+.form-group label {
+    color: #fff;
+    margin-top: 20px;  /* added margin-top to .form-group label */
+}
