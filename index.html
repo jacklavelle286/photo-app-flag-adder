@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Country Flag Background Adder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Country Flag Background Adder</h1>
+        <p>This website is designed to add a patriotic flair to a profile picture of your choice.</p>
+        <form id="upload-form">
+            <div class="form-group">
+                <label for="imageUpload">Select an image:</label>
+                <input id="imageUpload" type="file" accept="image/*" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="flagSelect">Select a flag:</label>
+                <select id="flagSelect" class="form-control" required>
+                    <option value="">Select a flag</option>
+                    <option value="us">United States</option>
+                    <option value="gb-eng">England</option>
+                    <option value="es">Spain</option>
+                    <option value="pt">Portugal</option>
+                    <option value="ie">Ireland</option>
+                    <option value="de">Germany</option>
+                    <option value="au">Australia</option>
+                    <option value="in">India</option>
+                    <option value="br">Brazil</option>
+                    <option value="ca">Canada</option>
+                    <option value="fr">France</option>
+                    <option value="it">Italy</option>
+                    <option value="jp">Japan</option>
+                    <option value="nz">New Zealand</option>
+                    <option value="za">South Africa</option>
+                    <option value="se">Sweden</option>
+                    <option value="ch">Switzerland</option>
+                    <option value="nl">The Netherlands</option>
+                    <option value="ru">Russia</option>
+                    <option value="cn">China</option>
+                    <option value="kr">South Korea</option>
+                    <option value="sg">Singapore</option>
+                    <option value="ae">United Arab Emirates</option>
+                    <option value="sa">Saudi Arabia</option>
+                    <option value="eg">Egypt</option>
+                    <option value="ng">Nigeria</option>
+                    <option value="ke">Kenya</option>
+                    <option value="mx">Mexico</option>
+                    <option value="ar">Argentina</option>
+                    <option value="pe">Peru</option>
+                    <option value="ve">Venezuela</option>
+                    <option value="cl">Chile</option>
+                    <option value="co">Colombia</option>
+                    <option value="th">Thailand</option>
+                    <option value="my">Malaysia</option>
+                    <option value="vn">Vietnam</option>
+                    <option value="ph">Philippines</option>
+                    <option value="mm">Myanmar</option>
+                    <option value="id">Indonesia</option>
+                    <option value="qa">Qatar</option>
+                    <option value="kw">Kuwait</option>
+                    <option value="tr">Turkey</option>
+                    <option value="il">Israel</option>
+                    <option value="ua">Ukraine</option>
+                    <option value="pl">Poland</option>
+                    <option value="cz">Czech Republic</option>
+                    <option value="at">Austria</option>
+                    <option value="be">Belgium</option>
+                    <option value="dk">Denmark</option>
+                    <option value="no">Norway</option>
+                    <option value="fi">Finland</option>
+                    <option value="gr">Greece</option>
+                    <option value="hu">Hungary</option>
+                    <option value="ro">Romania</option>
+                    <option value="bg">Bulgaria</option>
+                    <option value="za">South Africa</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+        <div class="progress">
+            <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <span id="progress-label"></span>
+            </div>
+        </div>
+        
+        <button id="download-btn" class="btn btn-success mt-3" style="display: none;">Download Processed Image</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
